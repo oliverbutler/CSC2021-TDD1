@@ -40,6 +40,13 @@ public class Student {
     return str.toString();
   }
 
+  public Double getAverageMark() {
+    Double total = 0.0;
+    for(Module m : modules)
+      total += m.getMark();
+    return total /= modules.size();
+  }
+
   public UUID getId() {
     return this.id;
   }
@@ -86,10 +93,6 @@ public class Student {
 
   public ArrayList<Module> getModules() {
     return this.modules;
-  }
-
-  public void setModules(ArrayList<Module> modules) {
-    this.modules = modules;
   }
 
   public void addModule(Module module) {

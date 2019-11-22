@@ -14,7 +14,7 @@ public class Test {
     
     RecordManager record = new RecordManager();
     record.addStudent(oliver);
-    record.addStudent(oliver);
-    System.out.println(record);
+
+    System.out.println( record.getStudentAverageMark(oliver.getId()));
   }
 }

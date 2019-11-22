@@ -1,6 +1,7 @@
 package com.example.tddCoursework;
 
 import java.util.ArrayList;
+import java.util.UUID;
 import java.time.LocalDate;
 
 import com.example.tddCoursework.Student;
@@ -18,12 +19,42 @@ public class RecordManager {
     return str.toString();
   }
 
-  public ArrayList<Student> getStudents() {
-    return this.students;
+  public ArrayList<Student> getStudentByName(String search) {
+    ArrayList<Student> searchResult = new ArrayList<>();
+    for(Student s : students) {
+      if(s.getName().equalsIgnoreCase(search))
+        searchResult.add(s);
+    }
+    return searchResult;
   }
 
-  public void setStudents(ArrayList<Student> students) {
-    this.students = students;
+  public Student getStudentByID(UUID id) {
+    for(Student s : students)
+      if(s.getId() == id)
+        return s;
+    return null;
+  }
+
+  public void setStudentName(UUID id, String name) {
+    getStudentByID(id).setName(name);
+  }
+
+  public void setStudentAddress(UUID id, String address) {
+    getStudentByID(id).setPostalAddr(address);
+  }
+
+  public void setStudentAddModule(UUID id, Module module) {
+    getStudentByID(id).addModule(module);
+  }
+
+  public Double getStudentAverageMark(UUID id) {
+    return getStudentByID(id).getAverageMark();
+  }
+
+
+
+  public ArrayList<Student> getStudents() {
+    return this.students;
   }
   
   public void addStudent(Student student) {
