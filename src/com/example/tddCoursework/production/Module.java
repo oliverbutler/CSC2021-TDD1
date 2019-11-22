@@ -1,4 +1,4 @@
-package com.example.tddCoursework;
+package com.example.tddCoursework.production;
 
 public class Module {
   private String code;

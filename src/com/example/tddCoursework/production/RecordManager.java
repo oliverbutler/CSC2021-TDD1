@@ -1,11 +1,10 @@
-package com.example.tddCoursework;
+package com.example.tddCoursework.production;
 
 import java.util.ArrayList;
 import java.util.UUID;
-import java.time.LocalDate;
 
-import com.example.tddCoursework.Student;
-import com.example.tddCoursework.Module;
+import com.example.tddCoursework.production.Student;
+import com.example.tddCoursework.production.Module;
 
 public class RecordManager {
   private ArrayList<Student> students = new ArrayList<>();

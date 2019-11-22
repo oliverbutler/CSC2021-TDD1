@@ -1,10 +1,10 @@
-package com.example.tddCoursework;
+package com.example.tddCoursework.production;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.UUID;
 
-import com.example.tddCoursework.Module;
+import com.example.tddCoursework.production.Module;
 
 public class Student {
   final private UUID id;

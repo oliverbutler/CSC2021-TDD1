@@ -1,4 +1,4 @@
-package com.example.tddCoursework;
+package com.example.tddCoursework.test;
 
 import static org.junit.Assert.*;
 
