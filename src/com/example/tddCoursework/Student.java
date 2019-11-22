@@ -8,31 +8,48 @@ import com.example.tddCoursework.Module;
 
 public class Student {
   final private UUID id;
-  private String postalAddr;
+  private String name;
   private String email;
+  private String postalAddr;
   private String courseTitle;
   private LocalDate dateEnrolled;
-  private ArrayList<Module> modules;
+  private ArrayList<Module> modules = new ArrayList<>();
 
-  public Student(String postalAddr, String email, String courseTitle, LocalDate dateEnrolled, ArrayList<Module> modules) {
+  public Student(String name, String email, String postalAddr, String courseTitle, LocalDate dateEnrolled) {
     this.id = UUID.randomUUID();
-    this.postalAddr = postalAddr;
+    this.name = name;
     this.email = email;
+    this.postalAddr = postalAddr;
     this.courseTitle = courseTitle;
     this.dateEnrolled = dateEnrolled;
-    this.modules = modules;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder str = new StringBuilder();
+    Integer paddingLength = ( 40 - name.length() ) / 2;
+    str.append("=".repeat(paddingLength));
+    str.append(String.format("[ %s ]", name));
+    str.append("=".repeat(paddingLength));
+    str.append(String.format("\nID %s\nEmail: %s\nAddress: %s\nCourse Title: %s\nDate Enrolled: %s\n", id, email, postalAddr, courseTitle, dateEnrolled));
+    str.append("Modules: \n");
+    for(Module m : modules) {
+      str.append("  " + m + "\n");
+    }
+    str.append("\n");
+    return str.toString();
   }
 
   public UUID getId() {
     return this.id;
   }
 
-  public String getPostalAddr() {
-    return this.postalAddr;
+  public String getName() {
+    return this.name;
   }
 
-  public void setPostalAddr(String postalAddr) {
-    this.postalAddr = postalAddr;
+  public void setName(String name) {
+    this.name = name;
   }
 
   public String getEmail() {
@@ -41,6 +58,14 @@ public class Student {
 
   public void setEmail(String email) {
     this.email = email;
+  }
+
+  public String getPostalAddr() {
+    return this.postalAddr;
+  }
+
+  public void setPostalAddr(String postalAddr) {
+    this.postalAddr = postalAddr;
   }
 
   public String getCourseTitle() {
@@ -65,6 +90,10 @@ public class Student {
 
   public void setModules(ArrayList<Module> modules) {
     this.modules = modules;
+  }
+
+  public void addModule(Module module) {
+    this.modules.add(module);
   }
 
 

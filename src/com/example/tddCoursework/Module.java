@@ -11,6 +11,11 @@ public class Module {
     this.mark = mark;
   }
 
+  @Override
+  public String toString() {
+    return String.format("%s %s (%d/100)", code, title, mark);
+  }
+
   public String getCode() {
     return this.code;
   }

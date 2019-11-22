@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Test",
+      "request": "launch",
+      "mainClass": "com.example.tddCoursework.Test",
+      "projectName": "tddCoursework"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - RecordManager",
+      "request": "launch",
+      "mainClass": "com.example.tddCoursework.RecordManager",
+      "projectName": "tddCoursework"
+    }
+  ]
+}
