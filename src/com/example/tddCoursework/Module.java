@@ -5,112 +5,85 @@ package com.example.tddCoursework;
  * Newcastle University in terms of the Module Code
  */
 public class Module {
-  private String code;
-  private String title;
-  private Integer mark;
+    private String code;
+    private String title;
+    private Integer mark;
 
-  /**
-   * Create a new Module with the specified parameters
-   * 
-   * @param code  Module code in the format XXX0000 e.g. CSC2021
-   * @param title Title for the module
-   * @param mark  Mark for the module between 1-100
-   * 
-   * @throws IllegalArgumentException if the parameters suplied are invalid
-   */
-  public Module(String code, String title, Integer mark) {
-    initModule(code, title, mark);
-  }
+    /**
+     * Create a new Module with the specified parameters
+     * 
+     * @param code  Module code in the format XXX0000 e.g. CSC2021
+     * @param title Title for the module
+     * @param mark  Mark for the module between 1-100
+     * 
+     * @throws IllegalArgumentException if the parameters suplied are invalid
+     */
+    public Module(String code, String title, Integer mark) {
+        makeModule(code, title, mark);
+    }
 
-  /**
-   * Creates a module with the mark of 1
-   * 
-   * @param code  Module code in the format XXX0000 e.g. CSC2021
-   * @param title Title for the module
-   * 
-   * @throws IllegalArgumentException if the parameters suplied are invalid
-   */
-  public Module(String code, String title) {
-    initModule(code, title, 1);
-  }
+    /**
+     * Creates a module with the mark of 1
+     * 
+     * @param code  Module code in the format XXX0000 e.g. CSC2021
+     * @param title Title for the module
+     * 
+     * @throws IllegalArgumentException if the parameters suplied are invalid
+     */
+    public Module(String code, String title) {
+        makeModule(code, title, 1);
+    }
 
-  private void initModule(String code, String title, Integer mark) {
-    if (code == null | code.isEmpty())
-      throw new IllegalArgumentException("Module code cannot be null or empty");
-    if (!code.matches("^[a-zA-Z]{3}[0-9]{4}$"))
-      throw new IllegalArgumentException("Module code must be in the format XXX0000 e.g. CSC2021");
-    if (title == null | title.isEmpty())
-      throw new IllegalArgumentException("Title cannot be null or empty");
-    if (mark == null)
-      throw new IllegalArgumentException("Mark cannot be null");
-    if (mark < 1 | mark > 100)
-      throw new IllegalArgumentException("Mark must be between 1-100");
+    private void makeModule(String code, String title, Integer mark) {
+        if (code == null | code.isEmpty())
+            throw new IllegalArgumentException("Module code cannot be null or empty");
+        if (!code.matches("^[a-zA-Z]{3}[0-9]{4}$"))
+            throw new IllegalArgumentException("Module code must be in the format XXX0000 e.g. CSC2021");
+        if (title == null | title.isEmpty())
+            throw new IllegalArgumentException("Title cannot be null or empty");
+        if (mark == null)
+            throw new IllegalArgumentException("Mark cannot be null");
+        if (mark < 1 | mark > 100)
+            throw new IllegalArgumentException("Mark must be between 1-100");
 
-    this.code = code;
-    this.title = title;
-    this.mark = mark;
-  }
+        this.code = code;
+        this.title = title;
+        this.mark = mark;
+    }
 
-  /**
-   * Override the original toString() method to return the appropriate information
-   */
-  @Override
-  public String toString() {
-    return String.format("%s %s (%d/100)", code, title, mark);
-  }
+    /**
+     * Override the original toString() method to return the appropriate information
+     */
+    @Override
+    public String toString() {
+        return String.format("%s %s (%d/100)", code, title, mark);
+    }
 
-  /**
-   * Getter for the module code of a module
-   * 
-   * @return module code for a module
-   */
-  public String getCode() {
-    return this.code;
-  }
+    /**
+     * Getter for the module code of a module
+     * 
+     * @return module code for a module
+     */
+    public String getCode() {
+        return this.code;
+    }
 
-  /**
-   * Setter for the module code
-   * 
-   * @param code the new module code
-   */
-  public void setCode(String code) {
-    this.code = code;
-  }
+    /**
+     * Getter for the module title
+     * 
+     * @return the module title
+     */
+    public String getTitle() {
+        return this.title;
+    }
 
-  /**
-   * Getter for the module title
-   * 
-   * @return the module title
-   */
-  public String getTitle() {
-    return this.title;
-  }
-
-  /**
-   * Setter for the module title
-   * 
-   * @param title the new module title
-   */
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  /**
-   * Getter for the module mark
-   * 
-   * @return the module mark
-   */
-  public Integer getMark() {
-    return this.mark;
-  }
-
-  /**
-   * Setter for the module mark
-   * 
-   * @param mark the new module mark
-   */
-  public void setMark(Integer mark) {
-    this.mark = mark;
-  }
+    /**
+     * Getter for the module mark
+     * 
+     * @return the module mark
+     */
+    public Integer getMark() {
+        return this.mark;
+    }
 
 }
