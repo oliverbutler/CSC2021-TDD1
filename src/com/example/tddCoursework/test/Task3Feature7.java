@@ -14,7 +14,7 @@ import com.example.tddCoursework.Student;
 /**
  * JUnit Test to test feature 7 from Task 3
  */
-public class Task3Feature7 {
+public class Task3Feature7 extends AbstractLoggingJUnitTest {
     private RecordManager rm;
     private Student s1;
     private Module m1;

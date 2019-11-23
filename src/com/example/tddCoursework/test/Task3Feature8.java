@@ -14,7 +14,7 @@ import com.example.tddCoursework.Student;
 /**
  * JUnit Test to test feature 7 from Task 3
  */
-public class Task3Feature8 {
+public class Task3Feature8 extends AbstractLoggingJUnitTest {
     private RecordManager rm;
     private Student s1;
     private Module m1;
@@ -53,7 +53,7 @@ public class Task3Feature8 {
         s1.addModule(m2);
         s1.addModule(m3);
         rm.addStudent(s1);
-        assertTrue(rm.getStudentAverageMark(s1.getId()) - 81.6666 < 0.005);
+        assertTrue(rm.getStudentAverageMark(s1.getId()) - 81.6666 < 0.0005);
     }
 
     @Test(expected = IllegalArgumentException.class)

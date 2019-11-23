@@ -13,9 +13,9 @@ import com.example.tddCoursework.RecordManager;
 import com.example.tddCoursework.Student;
 
 /**
- * JUnit Test to test feature 7 from Task 3
+ * JUnit Test to test the extra test from Task 3
  */
-public class Task3ExtraTest {
+public class Task3ExtraTest extends AbstractLoggingJUnitTest {
     private RecordManager rm;
     private Student s1;
     private Module m1;
@@ -50,7 +50,7 @@ public class Task3ExtraTest {
     public void testAddMultipleError() {
         rm.addStudent(s1);
         rm.studentAddModule(s1.getId(), m1);
-        rm.studentAddModule(s1.getId(), "BAD NAME", "Course Title");
+        rm.studentAddModule(s1.getId(), "Bad Name", "Course Title");
         rm.studentAddModule(s1.getId(), m3);
         ArrayList<Module> m = rm.getStudentByID(s1.getId()).getModules();
         assertTrue(m.size() == 2);
