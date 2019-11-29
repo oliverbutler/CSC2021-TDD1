@@ -112,32 +112,34 @@ public class RecordManager {
     /**
      * Add a new module to the student
      * 
-     * @param id    the ID of the student
-     * @param code  the Module code for the Module
-     * @param title the Module title
-     * @param mark  the mark of the Module
+     * @param id      the ID of the student
+     * @param code    the Module code for the Module
+     * @param title   the Module title
+     * @param credits Credits for the module
+     * @param mark    the mark of the Module
      * 
      * @throws IllegalArgumentException if the parameters suplied are invalid
      * 
      * @see Student
      */
-    public void studentAddModule(UUID id, String code, String title, Integer mark) {
-        getStudentByID(id).addModule(code, title, mark);
+    public void studentAddModule(UUID id, String code, String title, Integer credits, Integer mark) {
+        getStudentByID(id).addModule(code, title, credits, mark);
     }
 
     /**
      * Add a new module (without a mark) to the student
      * 
-     * @param id    the ID of the student
-     * @param code  the Module code for the Module
-     * @param title the Module title
+     * @param id      the ID of the student
+     * @param code    the Module code for the Module
+     * @param title   the Module title
+     * @param credits Credits for the module
      * 
      * @throws IllegalArgumentException if the parameters suplied are invalid
      * 
      * @see Student
      */
-    public void studentAddModule(UUID id, String code, String title) {
-        getStudentByID(id).addModule(code, title);
+    public void studentAddModule(UUID id, String code, String title, Integer credits) {
+        getStudentByID(id).addModule(code, title, credits);
     }
 
     /**

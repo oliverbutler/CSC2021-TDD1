@@ -26,9 +26,9 @@ public class Task3Feature8 extends AbstractLoggingJUnitTest {
         rm = new RecordManager();
         s1 = new Student("Oliver Butler", "oliver@oliverbutler.uk", "Some address", "Computer Science",
                 LocalDate.of(2018, 9, 20));
-        m1 = new Module("CSC2021", "Software Engineering", 80);
-        m2 = new Module("CSC2022", "Team Project", 75);
-        m3 = new Module("CSC2023", "Algorithms", 90);
+        m1 = new Module("CSC2021", "Software Engineering", 10, 80);
+        m2 = new Module("CSC2022", "Team Project", 10, 75);
+        m3 = new Module("CSC2023", "Algorithms", 10, 90);
 
     }
 

@@ -18,17 +18,13 @@ public class Task3Feature7 extends AbstractLoggingJUnitTest {
     private RecordManager rm;
     private Student s1;
     private Module m1;
-    private Module m2;
-    private Module m3;
 
     @Before
     public void init() {
         rm = new RecordManager();
         s1 = new Student("Oliver Butler", "oliver@oliverbutler.uk", "Some address", "Computer Science",
                 LocalDate.of(2018, 9, 20));
-        m1 = new Module("CSC2021", "Software Engineering", 80);
-        m2 = new Module("CSC2022", "Team Project", 75);
-        m3 = new Module("CSC2023", "Algorithms", 90);
+        m1 = new Module("CSC2021", "Software Engineering", 10, 80);
 
     }
 
@@ -50,7 +46,7 @@ public class Task3Feature7 extends AbstractLoggingJUnitTest {
     @Test
     public void testAddNewModuleNewNoMark() {
         rm.addStudent(s1);
-        rm.studentAddModule(s1.getId(), "CSC2000", "Title");
+        rm.studentAddModule(s1.getId(), "CSC2000", "Title", 10);
         assertEquals("CSC2000", rm.getStudentByID(s1.getId()).getModules().get(0).getCode());
         assertTrue(rm.getStudentByID(s1.getId()).getModules().get(0).getMark() == 1);
     }

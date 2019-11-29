@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 
-import com.example.tddCoursework.Module;
 import com.example.tddCoursework.RecordManager;
 import com.example.tddCoursework.Student;
 
@@ -14,7 +13,7 @@ import org.junit.Test;
 /**
  * JUnit Test to test features 1-5 added in Task2 TDD not used within this class
  */
-public class Task2RecordManagerTest {
+public class Task2TestRecordManager {
     private RecordManager rm;
     private Student s1;
     private Student s2;

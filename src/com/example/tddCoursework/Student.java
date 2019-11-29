@@ -211,8 +211,8 @@ public class Student {
      * 
      * @see Module
      */
-    public void addModule(String code, String title, Integer mark) {
-        Module m = new Module(code, title, mark);
+    public void addModule(String code, String title, Integer credits, Integer mark) {
+        Module m = new Module(code, title, credits, mark);
         checkAddModule(m);
     }
 
@@ -226,8 +226,8 @@ public class Student {
      * 
      * @see Module
      */
-    public void addModule(String code, String title) {
-        Module m = new Module(code, title);
+    public void addModule(String code, String title, Integer credits) {
+        Module m = new Module(code, title, credits);
         checkAddModule(m);
     }
 
@@ -235,6 +235,8 @@ public class Student {
      * Internal add module to check for duplicates
      * 
      * @param module new Module to add
+     * 
+     * @throws IllegalArgumentException If null or duplicate module
      */
     private void checkAddModule(Module module) {
         if (module == null)

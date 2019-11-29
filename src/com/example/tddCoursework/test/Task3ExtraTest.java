@@ -27,9 +27,9 @@ public class Task3ExtraTest extends AbstractLoggingJUnitTest {
         rm = new RecordManager();
         s1 = new Student("Oliver Butler", "oliver@oliverbutler.uk", "Some address", "Computer Science",
                 LocalDate.of(2018, 9, 20));
-        m1 = new Module("CSC2021", "Software Engineering", 80);
-        m2 = new Module("CSC2022", "Team Project", 75);
-        m3 = new Module("CSC2023", "Algorithms", 90);
+        m1 = new Module("CSC2021", "Software Engineering", 10, 80);
+        m2 = new Module("CSC2022", "Team Project", 10, 75);
+        m3 = new Module("CSC2023", "Algorithms", 10, 90);
 
     }
 
@@ -50,7 +50,7 @@ public class Task3ExtraTest extends AbstractLoggingJUnitTest {
     public void testAddMultipleError() {
         rm.addStudent(s1);
         rm.studentAddModule(s1.getId(), m1);
-        rm.studentAddModule(s1.getId(), "Bad Name", "Course Title");
+        rm.studentAddModule(s1.getId(), "Bad Name", "Course Title", 10);
         rm.studentAddModule(s1.getId(), m3);
         ArrayList<Module> m = rm.getStudentByID(s1.getId()).getModules();
         assertTrue(m.size() == 2);

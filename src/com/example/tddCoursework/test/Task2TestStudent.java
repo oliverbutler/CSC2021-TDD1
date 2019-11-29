@@ -13,7 +13,7 @@ import org.junit.Test;
 /**
  * JUnit Test to test features 1-5 added in Task2 TDD not used within this class
  */
-public class Task2StudentTest {
+public class Task2TestStudent {
     private Student s1;
     private Student s2;
 
@@ -87,7 +87,7 @@ public class Task2StudentTest {
 
     @Test
     public void testStudentAddModule() {
-        Module m = new Module("CSC2022", "Test", 50);
+        Module m = new Module("CSC2022", "Test", 10, 50);
         s1.addModule(m);
         assertEquals("CSC2022", s1.getModules().get(0).getCode());
     }
@@ -100,16 +100,16 @@ public class Task2StudentTest {
 
     @Test
     public void testStudentAddModuleNewNoMark() {
-        s1.addModule("CSC2021", "Software Engineering");
+        s1.addModule("CSC2021", "Software Engineering", 10);
         assertEquals("CSC2021", s1.getModules().get(0).getCode());
         assertTrue(s1.getModules().get(0).getMark() == 1);
     }
 
     @Test
     public void testStudentGetModules() {
-        s1.addModule("CSC2021", "Software Engineering");
-        s1.addModule("CSC2022", "Software Engineering Team Project");
-        s1.addModule("CSC2023", "Algoirthms Design & Analysis");
+        s1.addModule("CSC2021", "Software Engineering", 10);
+        s1.addModule("CSC2022", "Software Engineering Team Project", 10);
+        s1.addModule("CSC2023", "Algoirthms Design & Analysis", 10);
         assertTrue(s1.getModules().size() == 3);
         assertEquals("CSC2022", s1.getModules().get(1).getCode());
     }
